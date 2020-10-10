@@ -36,7 +36,7 @@ app.post('/create', (req, res) => {
   Cafe.findOne({ name }, (err, item) => {
     if(err) return console.log(err);
     if(item) {
-      res.status(400).send('Bad request');
+      res.status(400).send({ error: 'Cafe already exists' });
     } else {
       const cafe = new Cafe(req.body);
       cafe.save().then(() => {
