@@ -70,7 +70,6 @@ app.delete('/cafe/:id', async(req, res) => {
   const _id = req.params.id;
   try {
     const cafe = await Cafe.findByIdAndDelete(_id);
-    console.log('---------------cafe', cafe)
     if(cafe) return res.status(200).send(user)
     res.status(404).send();
   } catch (error) {
