@@ -7,6 +7,10 @@ const port = 3001;
 
 app.use(express.json());
 
+app.get('/', (req,res) => {
+  res.send({ title: "Welcome to cafes" })
+})
+
 app.get('/cafes', (req,res) => {
   Cafe.find({}).then((users) => {
     res.send(users)
