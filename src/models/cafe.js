@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const Cafe = mongoose.model('Cafe', {
   name: {
     type: String,
-    required: true
   },
   description: {
     type: String
