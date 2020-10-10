@@ -77,6 +77,6 @@ app.delete('/cafe/:id', async(req, res) => {
   }
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log('server listening on ', port)
 })
